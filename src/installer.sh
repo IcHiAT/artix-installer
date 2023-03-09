@@ -83,6 +83,11 @@ case $(grep vendor /proc/cpuinfo) in
 esac
 
 # Install base system and kernel
-basestrap /mnt base base-devel "$MY_INIT" elogind-"$MY_INIT" "$fs_pkgs" efibootmgr grub "$ucode" dhcpcd wpa_supplicant connman-"$MY_INIT" nano dialog
-basestrap /mnt linux linux-firmware linux-headers mkinitcpio
+basestrap /mnt base base-devel "$MY_INIT" elogind-"$MY_INIT" "$fs_pkgs" efibootmgr grub "$ucode" dhcpcd wpa_supplicant connman-"$MY_INIT" nano dialog 
+basestrap /mnt linux linux-firmware linux-headers mkinitcpio dosfstools
+
+if [ "$MY_INIT" = "openrc" ]; then
+	basestrap /mnt bluez bluez-openrc bluez-utils cups cups-openrc
+fi
+
 fstabgen -U /mnt >/mnt/etc/fstab
