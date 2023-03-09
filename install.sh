@@ -30,7 +30,7 @@ confirm_password() {
 }
 
 # Load keymap
-sudo loadkeys us
+sudo loadkeys de
 
 # Check boot mode
 [ ! -d /sys/firmware/efi ] && printf "Not booted in UEFI mode. Aborting..." && exit 1
