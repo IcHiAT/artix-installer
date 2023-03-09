@@ -24,10 +24,10 @@ ln -sf /usr/share/zoneinfo/"$REGION_CITY" /etc/localtime
 hwclock --systohc
 
 # Localization
-printf "en_US.UTF-8 UTF-8\n" >>/etc/locale.gen
+printf "de_DE.UTF-8 UTF-8\n" >>/etc/.gen
 locale-gen
-printf "LANG=en_US.UTF-8\n" >/etc/locale.conf
-printf "KEYMAP=us\n" >/etc/vconsole.conf
+printf "LANG=de_DE.UTF-8\n" >/etc/locale.conf
+printf "KEYMAP=de\n" >/etc/vconsole.conf
 
 # Host stuff
 printf '%s\n' "$MY_HOSTNAME" >/etc/hostname
