@@ -19,6 +19,9 @@
 # You should have received a copy of the GNU General Public License
 # along with artix-installer. If not, see <https://www.gnu.org/licenses/>.
 
+# Parallel Downloads
+sed -i '/#Parallel/s/^#//g' /etc/pacman.conf
+
 # Partition disk
 if [ "$MY_FS" = "ext4" ]; then
 	layout=",,V"
