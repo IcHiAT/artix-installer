@@ -17,7 +17,7 @@ In Connman, use: `agent on`, `scan wifi`, `services`, `connect wifi_NAME`, `quit
 
 3. Acquire the install scripts:
 ```
-pacman -S git
+pacman -Sy git
 git clone https://github.com/IcHiAT/artix-installer artix-installer
 cd artix-installer
 ```
